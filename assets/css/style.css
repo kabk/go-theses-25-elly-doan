@@ -1,0 +1,60 @@
+    body {
+        /* hyphens: auto; */
+    }
+    
+    h1 {
+    font-size: 8.5rem;
+    }
+    h2 {
+    font-size: 5rem
+    }
+    h3 {
+    font-size: 4rem
+    }
+    h4 {
+    font-size: 3rem
+    }
+    h5 {
+    font-size: 2rem
+    }
+    h6 {
+        font-size: 1rem
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        line-height: 1;
+        margin-bottom: 1rem;
+    }
+
+
+    .page-wrapper {
+        margin: 0 auto;
+        max-width: 60ch;
+        overflow: hidden;
+    }
+    .indent {
+        text-indent: 2rem;
+        }
+        
+    .paragraph-heading {
+     /* font-family: Georgia, 'Times New Roman', Times, serif; */
+     font-weight: 600;
+     /* font-size: 2rem; */
+    }
+
+    .leading {
+        line-height: 1.5;
+        }
+    
+    .tracking {
+        letter-spacing: -rem;
+    }
+    
+    .kerning {
+        letter-spacing: -1rem;
+    }
