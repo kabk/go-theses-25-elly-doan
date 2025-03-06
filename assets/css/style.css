@@ -183,6 +183,12 @@ figcaption {
   text-indent:0;
 }
 
+
+#mobilerat {
+display:none;
+}
+
+
 @media only screen and (max-width: 820px) {
   html {
     font-size: 18px;
@@ -200,5 +206,13 @@ figcaption {
 }
 .navigation a {
   line-height:1.2;
+}
+#mobilerat {
+  display:block;
+  position: absolute;
+  width: 30px; /* Change size of the image */
+  height: 30px;
+  touch-action: none; /* Prevent default mobile gestures */
+  pointer-events: none; /* Prevent image from blocking touch events */
 }
 }

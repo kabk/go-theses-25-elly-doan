@@ -73,3 +73,66 @@ document.addEventListener("DOMContentLoaded", function () {
   // Set the active link on initial load
   setActiveLink();
 });
+
+// mobilerat
+const mobilerat = document.getElementById("mobilerat");
+
+// Variables to store the initial position and flag for dragging
+let isDragging = false;
+let offsetX = 0;
+let offsetY = 0;
+
+// Handle the start of a touch or mouse event (when user clicks or touches the screen)
+function startDrag(e) {
+  e.preventDefault();
+
+  // If it's a mouse event, we get the mouse position; if it's a touch event, we get the touch position
+  const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+  const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+  // If it's the first click, place the image at the click position
+  if (!isDragging) {
+    mobilerat.style.left = `${
+      clientX - mobilerat.width / 2 + window.pageXOffset
+    }px`; // Adjust for image center and scroll
+    mobilerat.style.top = `${
+      clientY - mobilerat.height / 2 + window.pageYOffset
+    }px`; // Adjust for image center and scroll
+    isDragging = true; // Set dragging flag to true
+  }
+
+  // Set the offset from the image's current position
+  offsetX = clientX - mobilerat.offsetLeft;
+  offsetY = clientY - mobilerat.offsetTop;
+
+  // Add the move event listener to follow the mouse/touch while dragging
+  document.addEventListener("mousemove", moveDrag, false);
+  document.addEventListener("touchmove", moveDrag, false);
+}
+
+// Handle the movement of the mouse or touch
+function moveDrag(e) {
+  e.preventDefault();
+
+  // Get the current position of the mouse or touch
+  const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+  const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+  // Update the image position based on the movement, accounting for scroll
+  mobilerat.style.left = `${clientX - offsetX + window.pageXOffset}px`;
+  mobilerat.style.top = `${clientY - offsetY + window.pageYOffset}px`;
+}
+
+// Handle the end of the touch or mouse event (when the user releases the mouse or finger)
+function stopDrag() {
+  // Remove the move event listeners to stop following the mouse/touch
+  document.removeEventListener("mousemove", moveDrag);
+  document.removeEventListener("touchmove", moveDrag);
+  isDragging = false; // Reset dragging flag
+}
+
+// Add event listeners for touch or mouse events
+document.addEventListener("mousedown", startDrag, false); // For mouse
+document.addEventListener("touchstart", startDrag, false); // For touch
+document.addEventListener("mouseup", stopDrag, false); // For mouse
+document.addEventListener("touchend", stopDrag, false); // For touch
