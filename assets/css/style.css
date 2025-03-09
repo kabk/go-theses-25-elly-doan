@@ -147,6 +147,7 @@ top: var(--space-m);
 left: var(--space-m);
 font-size: var(--font-size-s);
 user-select:none;
+font-weight: bold;
 
 }
 
@@ -203,9 +204,11 @@ display:none;
   top:auto;
   margin-top:3rem;
   font-size:1rem;
+
 }
 .navigation a {
   line-height:1.2;
+
 }
 #mobilerat {
   display:block;
