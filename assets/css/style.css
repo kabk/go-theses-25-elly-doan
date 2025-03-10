@@ -20,6 +20,8 @@
 
 html, body {
   height: 100%; /* or min-height: 100vh; */
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -145,6 +147,7 @@ div.page-wrapper {
   margin:2rem 0;
   color:var(--pink);
   cursor: url('cursor.png') 10 10, auto;
+
 }
  
 .navigation {
