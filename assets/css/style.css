@@ -18,6 +18,12 @@
 
 /* GENERAL STYLES */
 
+html, body {
+  height: 100%; /* or min-height: 100vh; */
+}
+
+
+
 html {
   font-size: var(--font-size);
   font-family: var(--font-family);
